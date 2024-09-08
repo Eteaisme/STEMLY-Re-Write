@@ -4,15 +4,32 @@
 
 package frc.robot;
 
+
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.Subsystems.Intake.IntakeSubsystem;
 
 public class RobotContainer {
+  /* CONTROLLERS */
+  CommandXboxController controller = new CommandXboxController(0);
+
+  
+
+  /* SUBSYTEMS */
+  IntakeSubsystem intakeSubsystem = new IntakeSubsystem(); 
+
+
+
   public RobotContainer() {
     configureBindings();
   }
 
-  private void configureBindings() {}
+  private void configureBindings() {
+
+    controller.a().onTrue(intakeSubsystem.setVoltageCommand(5));
+    controller.a().onFalse(intakeSubsystem.setVoltageCommand(0));
+  }
 
   public Command getAutonomousCommand() {
     return Commands.print("No autonomous command configured");
