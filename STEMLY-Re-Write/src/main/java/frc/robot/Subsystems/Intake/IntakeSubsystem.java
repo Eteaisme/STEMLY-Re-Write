@@ -11,15 +11,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class IntakeSubsystem extends SubsystemBase {
     IntakeIO io = new IntakeIOSim();
-    IntakeIOInputsAutoLogged inputs = new IntakeIOInputsAutoLogged();
-    
+    IntakeIOInputsAutoLogged inputs = new IntakeIOInputsAutoLogged();  
     /*Create Intake Moter Object */
-    private final CANSparkMax intakeMoter = new CANSparkMax(kIntake.kIntakeCANID, MotorType.kBrushless);
+    // private final CANSparkMax intakeMoter = new CANSparkMax(kIntake.kIntakeCANID, MotorType.kBrushless);
    
     
     /* Set Voltage Command */
     public Command setVoltageCommand(double volts) {
-        return runOnce(() -> intakeMoter.setVoltage(volts));
+        return runOnce(() -> io.setVoltage(volts));
     }
 
     @Override
