@@ -1,15 +1,14 @@
-package frc.robot.Subsystems.Intake;
+package frc.robot.Subsystems.Feeder;
 
 import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class IntakeSubsystem extends SubsystemBase {
-    IntakeIO io = new IntakeIOSim();
-    IntakeIOInputsAutoLogged inputs = new IntakeIOInputsAutoLogged();  
+public class FeederSubsystem extends SubsystemBase {
+    FeederIO io = new FeederIOSim(); 
+    FeederIOInputsAutoLogged inputs = new FeederIOInputsAutoLogged();     
     
-
     public Command setVoltageCommand(double volts) {
         return runOnce(() -> io.setVoltage(volts));
     }
@@ -17,6 +16,6 @@ public class IntakeSubsystem extends SubsystemBase {
     @Override
     public void periodic() {
         io.updateInputs(inputs);
-        Logger.processInputs("Intake", inputs);
+        Logger.processInputs("Feeder", inputs);
     }
 }

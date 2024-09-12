@@ -14,6 +14,6 @@ public interface IntakeIO {
     /* Updates the set of loggable inputs */
     public abstract void updateInputs(IntakeIOInputs inputs);
     
-    public abstract void setVoltage(double volts); 
+    public abstract void setVoltage(double volts);
 
 }
