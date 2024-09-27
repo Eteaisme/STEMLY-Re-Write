@@ -11,9 +11,11 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.math.util.Units; 
 
 public class IntakeIOReal implements IntakeIO{
-
+    /*Create a new sparkmax and motor encoder object */
     CANSparkMax intakeMoter = new CANSparkMax(kIntake.kIntakeCANID, MotorType.kBrushless); 
     RelativeEncoder moterEncoder = intakeMoter.getEncoder(); 
+
+    /*Periodicly get the inputs from the motor*/
     @Override
     public void updateInputs(IntakeIOInputs inputs) {
         inputs.intakeAppliedVolts = intakeMoter.getAppliedOutput();
@@ -22,6 +24,7 @@ public class IntakeIOReal implements IntakeIO{
     }
 
 
+    /*Set the motor voltage*/
     @Override
     public void setVoltage(double volts) {
         intakeMoter.setVoltage(volts);
