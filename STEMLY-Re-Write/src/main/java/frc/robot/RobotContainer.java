@@ -8,6 +8,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.Subsystems.Arm.ArmSubsytem;
 import frc.robot.Subsystems.Feeder.FeederSubsystem;
 import frc.robot.Subsystems.Intake.IntakeSubsystem;
 
@@ -20,6 +21,7 @@ public class RobotContainer {
   /* SUBSYTEMS */
   IntakeSubsystem intakeSubsystem = new IntakeSubsystem(); 
   FeederSubsystem feederSubsystem = new FeederSubsystem(); 
+  ArmSubsytem armSubsystem = new ArmSubsytem(); 
 
 
   public RobotContainer() {
@@ -33,6 +35,9 @@ public class RobotContainer {
 
     controller.b().onTrue(feederSubsystem.setVoltageCommand(5));
     controller.b().onFalse(feederSubsystem.setVoltageCommand(0));
+
+    controller.x().onTrue(armSubsystem.setArmAngle(90));
+    controller.x().onFalse(armSubsystem.setArmAngle(0));
   }
 
   public Command getAutonomousCommand() {

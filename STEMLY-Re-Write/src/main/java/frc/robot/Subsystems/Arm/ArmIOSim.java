@@ -36,6 +36,7 @@ public class ArmIOSim implements ArmIO{
 
     @Override
     public void setSetpoint(double angle) {
+        armSim.setState(angle, angle);
     }
     
 }
