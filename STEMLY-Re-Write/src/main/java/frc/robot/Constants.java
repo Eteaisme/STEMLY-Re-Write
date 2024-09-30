@@ -5,8 +5,11 @@ public class Constants {
    public static final class kDrivetrain {
 
    }
-
-   /*Feeder constants */
+   /*Arm Constants */
+   public static final class kArm{
+       
+   }
+   /*Feeder Constants*/
    public static final class kFeeder{
       public static final int kFeederCANID = 1; 
    }
