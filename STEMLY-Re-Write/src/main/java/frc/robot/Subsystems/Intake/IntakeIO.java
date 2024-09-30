@@ -9,6 +9,8 @@ public interface IntakeIO {
         public double intakeAppliedVolts = 0.0;
         public double intakeCurrentAmps = 0.0;
         public double intakeTempCelsius = 0.0;
+
+        public boolean intakeSensorTriggered = false; 
     }
 
     /* Updates the set of loggable inputs */

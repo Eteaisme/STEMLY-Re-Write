@@ -4,6 +4,7 @@ import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class FeederSubsystem extends SubsystemBase {
     FeederIO io = new FeederIOSim(); 
@@ -13,6 +14,9 @@ public class FeederSubsystem extends SubsystemBase {
         return runOnce(() -> io.setVoltage(volts));
     }
 
+    public Trigger sensorTrigger() {
+        return new Trigger(() -> inputs.feederSensorTriggered).debounce(0);
+    }
     @Override
     public void periodic() {
         io.updateInputs(inputs);

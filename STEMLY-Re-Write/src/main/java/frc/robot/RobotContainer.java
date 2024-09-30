@@ -11,7 +11,9 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.Subsystems.Feeder.FeederSubsystem;
 import frc.robot.Subsystems.Intake.IntakeSubsystem;
 
+
 public class RobotContainer {
+  
   /* CONTROLLERS */
   CommandXboxController controller = new CommandXboxController(0);
 
@@ -21,18 +23,25 @@ public class RobotContainer {
   IntakeSubsystem intakeSubsystem = new IntakeSubsystem(); 
   FeederSubsystem feederSubsystem = new FeederSubsystem(); 
 
+  /*Commands*/
+  private Command intakeCommand; 
 
   public RobotContainer() {
     configureBindings();
+
+
+
   }
 
   private void configureBindings() {
 
-    controller.a().onTrue(intakeSubsystem.setVoltageCommand(5));
-    controller.a().onFalse(intakeSubsystem.setVoltageCommand(0));
+    controller.a()
+      .onTrue(intakeSubsystem.setVoltageCommand(5))
+      .onFalse(intakeSubsystem.setVoltageCommand(0));
 
-    controller.b().onTrue(feederSubsystem.setVoltageCommand(5));
-    controller.b().onFalse(feederSubsystem.setVoltageCommand(0));
+    controller.b()
+      .onTrue(feederSubsystem.setVoltageCommand(5))
+      .onFalse(feederSubsystem.setVoltageCommand(0));
   }
 
   public Command getAutonomousCommand() {

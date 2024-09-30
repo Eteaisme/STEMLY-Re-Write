@@ -4,6 +4,7 @@ import org.littletonrobotics.junction.Logger;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class IntakeSubsystem extends SubsystemBase {
     /*Creates a new intake sim object */
@@ -14,7 +15,10 @@ public class IntakeSubsystem extends SubsystemBase {
     public Command setVoltageCommand(double volts) {
         return runOnce(() -> io.setVoltage(volts));
     }
-
+    /*Returns sensor status */
+    public Trigger sensorTrigger() {
+        return new Trigger(() -> inputs.intakeSensorTriggered).debounce(0);
+    }
     /*Perodicly updates the simulation */
     @Override
     public void periodic() {
