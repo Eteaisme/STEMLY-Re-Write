@@ -1,5 +1,7 @@
 package frc.robot;
 
+import edu.wpi.first.math.util.Units;
+
 public class Constants {
    /*Drivetrain constants */
    public static final class kDrivetrain {
@@ -7,7 +9,8 @@ public class Constants {
    }
    /*Arm Constants */
    public static final class kArm{
-       
+      public static final double ARM_LENGTH = Units.inchesToMeters(20);
+      public static final double ARM_MASS = Units.lbsToKilograms(16.5);
    }
    /*Feeder Constants*/
    public static final class kFeeder{
