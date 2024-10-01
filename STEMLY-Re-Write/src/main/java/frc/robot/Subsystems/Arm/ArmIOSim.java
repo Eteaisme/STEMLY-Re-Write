@@ -1,5 +1,6 @@
 package frc.robot.Subsystems.Arm;
 
+<<<<<<< HEAD
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.math.util.Units;
@@ -38,5 +39,8 @@ public class ArmIOSim implements ArmIO{
     public void setSetpoint(double angle) {
         armSim.setState(angle, angle);
     }
+=======
+public class ArmIOSim implements ArmIO{
+>>>>>>> 9d4c50d235e39dba01b96e7b871028d045bd2e69
     
 }

@@ -1,5 +1,6 @@
 package frc.robot.Subsystems.Arm;
 
+<<<<<<< HEAD
 import org.littletonrobotics.junction.AutoLog;
 
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -23,3 +24,8 @@ public interface ArmIO {
 }
 
 
+=======
+public interface ArmIO {
+    
+}
+>>>>>>> 9d4c50d235e39dba01b96e7b871028d045bd2e69

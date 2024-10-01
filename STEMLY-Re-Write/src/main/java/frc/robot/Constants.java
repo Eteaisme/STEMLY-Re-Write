@@ -20,6 +20,7 @@ public class Constants {
    /*Intake constants */
    public static final class kIntake {
       public static final int kIntakeCANID = 0; 
+      public static final int kIntakeSensorID = 0; 
    }
 
 }
